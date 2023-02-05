@@ -12,7 +12,7 @@
 #define INDEXER_SIZE sizeof(struct Indexer)
 
 int insertGarbageCourceId(int id){
-    FILE *gb = fopen(COURCE_GARBAGE, "rb+");
+    FILE *gb = fopen(COURCE_GARBAGE, "ab+");
     int indexCount = 0;
     fscanf(gb, "%d", &indexCount);
     int *indexIds = malloc(indexCount * sizeof(int));
@@ -36,7 +36,7 @@ int insertGarbageCourceId(int id){
 }
 
 int rewriteGarbageItem(struct Cource *cource){
-    FILE *gb = fopen(COURCE_GARBAGE, "rb+");
+    FILE *gb = fopen(COURCE_GARBAGE, "ab+");
     int indexCount = 0;
     fscanf(gb, "%d", &indexCount);
     int *indexIds = malloc(indexCount * sizeof(int));
