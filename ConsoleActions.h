@@ -151,10 +151,12 @@ int updateMAction(struct Cource *cource, char *errorMes){
             if(!strcmp(command, "name")){
                 char name[COURCE_NAME_SIZE];
                 scanf("%50[^\n]", name);
+                fflush(stdin);
                 strcpy(cource->name, name);
             } else if(!strcmp(command, "description")){
                 char description[COURCE_DESCRIPTION_SIZE];
                 scanf("%256[^\n]", description);
+                fflush(stdin);
                 strcpy(cource->description, description);
             }else{
                 strcpy(errorMes, "Command is not valid");
@@ -188,10 +190,12 @@ int updateSAction(struct Cource *cource, struct Task *task, char *errorMes){
                 if(!strcmp(command, "name")){
                     char name[TASK_NAME_SIZE];
                     scanf("%50[^\n]", name);
+                    fflush(stdin);
                     strcpy(task->name, name);
                 } else if(!strcmp(command, "content")){
                     char content[TASK_CONTENT_SIZE];
                     scanf("%256[^\n]", content);
+                    fflush(stdin);
                     strcpy(task->content, content);
                 }else{
                     strcpy(errorMes, "Command is not valid");
@@ -220,6 +224,7 @@ int insertMAction(struct Cource *cource, char *errorMes){
     if(!strcmp(command, "name")) {
         char name[COURCE_NAME_SIZE];
         scanf("%50[^\n]", name);
+        fflush(stdin);
         strcpy(cource->name, name);
     }else{
         strcpy(errorMes, "Command is not valid");
@@ -229,6 +234,7 @@ int insertMAction(struct Cource *cource, char *errorMes){
     if(!strcmp(command, "description")){
         char description[COURCE_DESCRIPTION_SIZE];
         scanf("%256[^\n]", description);
+        fflush(stdin);
         strcpy(cource->description, description);
     }else{
         strcpy(errorMes, "Command is not valid");
@@ -256,6 +262,7 @@ int insertSAction(struct Cource *cource, struct Task *task, char *errorMes){
     if(!strcmp(command, "name")) {
         char name[TASK_NAME_SIZE];
         scanf("%50[^\n]", name);
+        fflush(stdin);
         strcpy(task->name, name);
     }else{
         strcpy(errorMes, "Command is not valid");
@@ -265,6 +272,7 @@ int insertSAction(struct Cource *cource, struct Task *task, char *errorMes){
     if(!strcmp(command, "content")){
         char description[TASK_CONTENT_SIZE];
         scanf("%256[^\n]", description);
+        fflush(stdin);
         strcpy(task->content, description);
     }else{
         strcpy(errorMes, "Command is not valid");
