@@ -190,8 +190,10 @@ int insertCource(struct Cource cource, char* errorMes){
     struct Indexer indexer;
 
     int gbCount =  0;
-    fscanf(gb, "%d", &gbCount);
-    fclose(gb);
+    if(gb != NULL){
+        fscanf(gb, "%d", &gbCount);
+        fclose(gb);
+    }
 
     if(gbCount){
         rewriteGarbageItem(&cource);

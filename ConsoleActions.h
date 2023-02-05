@@ -26,7 +26,7 @@ void printTask(struct Task task){
 
 int getMAction(struct Cource *cource, char *errorMes){
     int id = -1;
-    char command[10];
+    char command[20];
     scanf("%s", command);
     if(!strcmp(command, "id")){
         scanf("%d", &id);
@@ -53,7 +53,7 @@ int getMAction(struct Cource *cource, char *errorMes){
 
 int getSAction(struct Cource *cource, struct Task *task, char *errorMes){
     int id = -1;
-    char command[10];
+    char command[20];
     scanf("%d", &id);
     if(getCource(cource, id, errorMes)){
         scanf("%s", command);
@@ -91,7 +91,7 @@ int getSAction(struct Cource *cource, struct Task *task, char *errorMes){
 
 int delMAction(struct Cource *cource, char *errorMes){
     int id = -1;
-    char command[10];
+    char command[20];
     scanf("%s", command);
     if(!strcmp(command, "id")){
         scanf("%d", &id);
@@ -116,7 +116,7 @@ int delMAction(struct Cource *cource, char *errorMes){
 
 int delSAction(struct Cource *cource, struct Task *task, char *errorMes){
     int id = -1;
-    char command[10];
+    char command[20];
     scanf("%d", &id);
     if(getCource(cource, id, errorMes)){
         scanf("%s", command);
@@ -142,7 +142,7 @@ int delSAction(struct Cource *cource, struct Task *task, char *errorMes){
 
 int updateMAction(struct Cource *cource, char *errorMes){
     int id = -1;
-    char command[10];
+    char command[20];
     scanf("%s", command);
     if(!strcmp(command, "id")){
         scanf("%d", &id);
@@ -178,7 +178,7 @@ int updateMAction(struct Cource *cource, char *errorMes){
 
 int updateSAction(struct Cource *cource, struct Task *task, char *errorMes){
     int id = -1;
-    char command[10];
+    char command[20];
     scanf("%d", &id);
     if(getCource(cource, id, errorMes)){
         scanf("%s", command);
@@ -219,7 +219,7 @@ int updateSAction(struct Cource *cource, struct Task *task, char *errorMes){
 }
 
 int insertMAction(struct Cource *cource, char *errorMes){
-    char command[10];
+    char command[20];
     scanf("%s", command);
     if(!strcmp(command, "name")) {
         char name[COURCE_NAME_SIZE];
@@ -227,7 +227,7 @@ int insertMAction(struct Cource *cource, char *errorMes){
         fflush(stdin);
         strcpy(cource->name, name);
     }else{
-        strcpy(errorMes, "Command is not valid");
+        strcpy(errorMes, "Command name is not valid");
         return 0;
     }
     scanf("%s", command);
@@ -237,7 +237,7 @@ int insertMAction(struct Cource *cource, char *errorMes){
         fflush(stdin);
         strcpy(cource->description, description);
     }else{
-        strcpy(errorMes, "Command is not valid");
+        strcpy(errorMes, "Command description is not valid");
         return 0;
     }
     if(!insertCource(*cource, errorMes)){
@@ -248,7 +248,7 @@ int insertMAction(struct Cource *cource, char *errorMes){
 }
 
 int insertSAction(struct Cource *cource, struct Task *task, char *errorMes){
-    char command[10];
+    char command[20];
     scanf("%s", command);
     if(!strcmp(command, "courceid")) {
         int courceid = -1;
@@ -300,7 +300,7 @@ int calcMAction(char *errorMes){
 
 int calcSAction(char *errorMes){
     int count = 0;
-    char command[10];
+    char command[20];
     scanf("%s", command);
     if(!strcmp(command, "total")) {
         if(!getTaskTotalCount(&count, errorMes)){

@@ -70,8 +70,10 @@ int insertTask(struct Cource cource, struct Task task, char *errorMes){
     }
 
     int gbCount = 0;
-    fscanf(gb, "%d", &gbCount);
-    fclose(gb);
+    if(gb != NULL){
+        fscanf(gb, "%d", &gbCount);
+        fclose(gb);
+    }
 
     long address;
     struct Task prevTask;
