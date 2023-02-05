@@ -1,0 +1,73 @@
+insert-m 
+name cource1
+description description1
+
+insert-m 
+name cource2
+description description2
+
+insert-m 
+name cource3
+description description3
+
+insert-m 
+name cource4
+description description4
+
+insert-m 
+name cource5
+description description5
+
+insert-s courceid 1
+name task11
+content content11
+
+insert-s courceid 2
+name task21
+content content21
+
+insert-s courceid 2
+name task22
+content content22
+
+insert-s courceid 3
+name task31
+content content31
+
+insert-s courceid 3
+name task32
+content content32
+
+insert-s courceid 3
+name task33
+content content33
+
+ut-m
+
+ut-s
+
+del-m id 2
+
+ut-m 
+
+ut-s
+
+insert-m 
+name cource6
+description description6
+
+insert-s courceid 2
+name task61
+content content61
+
+ut-m 
+
+ut-s
+
+update-m id 1 name newcource1
+
+update-s 1 id 1 content newcontent1
+
+ut-m 
+
+ut-s
