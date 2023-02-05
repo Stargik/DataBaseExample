@@ -61,7 +61,7 @@ int rewriteGarbageTask(struct Task *task, long *address){
 
 int insertTask(struct Cource cource, struct Task task, char *errorMes){
     FILE* fl = fopen(TASK_FL, "ab+");
-    FILE *gb = fopen(TASK_GARBAGE, "rb+");
+    FILE *gb = fopen(TASK_GARBAGE, "ab+");
 
     if(!checkDbTaskExisting(fl, errorMes)){
         fclose(gb);
@@ -159,7 +159,7 @@ int updateTask(struct Task task, char *errorMes){
 
 int deleteTask(struct Cource cource, struct Task task, char *errorMes){
     FILE* fl = fopen(TASK_FL, "rb+");
-    FILE *gb = fopen(TASK_GARBAGE, "rb+");
+    FILE *gb = fopen(TASK_GARBAGE, "ab+");
 
     if(!checkDbTaskExisting(fl, errorMes)){
         fclose(gb);
@@ -214,7 +214,7 @@ int deleteTask(struct Cource cource, struct Task task, char *errorMes){
 
 int deleteTasksByCource(struct Cource cource, char *errorMes){
     FILE* fl = fopen(TASK_FL, "rb+");
-    FILE *gb = fopen(TASK_GARBAGE, "rb+");
+    FILE *gb = fopen(TASK_GARBAGE, "ab+");
 
     if(!checkDbTaskExisting(fl, errorMes)){
         fclose(gb);
